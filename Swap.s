@@ -1,7 +1,13 @@
+.data
+.word 7
+.word 3
+
+.text
+.globl main
 
 main:
-	addi $t0, $0, 1
-	addi $t1, $0, 2
-	add $t2, $t0, $0
-	add $t0, $t1, $0
-	add $t1, $t2,$0
+	lui $s0, 0x1001
+	lw $s1, 0($s0)
+	lw $s2, 4($s0)
+	sw $s2, 0($s0)
+	sw $s1, 4($s0)
